@@ -1,0 +1,442 @@
+// 1. Escreva um programa em C que mostre a mensagem “Olá, mundo!” na tela.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    printf("Olá, mundo!\n");
+    return 0;
+}
+
+// 2. Faça um programa que leia um número inteiro e mostre esse número na tela.
+
+int main() {
+    int numero;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    printf("O número digitado foi: %d\n", numero);
+    return 0;
+}
+
+// 3. Crie um programa que leia dois números inteiros e mostre a soma deles.
+int main() {
+    int num1, num2, soma;
+    printf("Digite o primeiro número inteiro: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número inteiro: ");
+    scanf("%d", &num2);
+    soma = num1 + num2;
+    printf("A soma dos números é: %d\n", soma);
+    return 0;
+}
+// 4. Desenvolva um programa que leia um número e informe se ele é positivo ou negativo.
+int main() {
+    int numero;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    if (numero > 0) {
+        printf("O número é positivo.\n");
+    } else if (numero < 0) {
+        printf("O número é negativo.\n");
+    } else {
+        printf("O número é zero.\n");
+    }
+    return 0;
+}
+
+// 5. Faça um programa que leia um número inteiro e informe se ele é par ou ímpar.
+int main() {
+    int numero;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    if (numero % 2 == 0) {
+        printf("O número é par.\n");
+    } else {
+        printf("O número é ímpar.\n");
+    }
+    return 0;
+}   
+
+// 6. Escreva um programa que leia três notas e calcule a média aritmética.
+int main() {
+    float nota1, nota2, nota3, media;
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+    media = (nota1 + nota2 + nota3) / 3;
+    printf("A média aritmética é: %.2f\n", media);
+    return 0;
+}   
+
+// 7. Crie um programa que leia o nome e a idade de uma pessoa e mostre esses dados.
+int main() {
+    char nome[50];
+    int idade;
+    printf("Digite o nome da pessoa: ");
+    fgets(nome, sizeof(nome), stdin); // Lê o nome com espaços
+    printf("Digite a idade da pessoa: ");
+    scanf("%d", &idade);
+    printf("Nome: %s", nome); // O fgets inclui a nova linha, por isso não é necessário adicionar \n
+    printf("Idade: %d\n", idade);
+    return 0;
+}       
+
+// 8. Faça um programa que leia um número inteiro e mostre sua tabuada de 1 a 10.
+int main() {
+    int numero;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    printf("Tabuada de %d:\n", numero);
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", numero, i, numero * i);
+    }
+    return 0;
+}   
+// 9. Desenvolva um programa que leia um número inteiro e mostre os números de 1 até ele.
+int main() {
+    int numero;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    printf("Números de 1 até %d:\n", numero);
+    for (int i = 1; i <= numero; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    return 0;
+}   
+// 10. Faça um programa que leia um número e calcule seu fatorial (usando for).
+int main() {
+    int numero, fatorial = 1;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+    if (numero < 0) {
+        printf("Fatorial não é definido para números negativos.\n");
+    } else {
+        for (int i = 1; i <= numero; i++) {
+            fatorial *= i;
+        }
+        printf("O fatorial de %d é: %d\n", numero, fatorial);
+    }
+    return 0;
+}   
+// 11. Crie um programa que leia 5 números inteiros e mostre a soma deles.
+int main() {
+    int numeros[5];
+    int soma = 0;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+        soma += numeros[i];
+    }
+    printf("A soma dos números é: %d\n", soma);
+    return 0;
+}   
+// 12. Faça um programa que leia 5 números e informe qual é o maior.
+int main() {
+    int numeros[5];
+    int maior;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+        if (i == 0 || numeros[i] > maior) {
+            maior = numeros[i];
+        }
+    }
+    printf("O maior número é: %d\n", maior);
+    return 0;
+}   
+// 13. Escreva um programa que leia um vetor de 10 posições e mostre seus valores.
+int main() {
+    int vetor[10];
+    printf("Digite 10 números inteiros:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+    printf("Os números digitados foram:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+    return 0;
+}   
+// 14. Crie um programa que leia um vetor de 5 números e calcule a média.
+int main() {
+    int vetor[5];
+    float media;
+    int soma = 0;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+        soma += vetor[i];
+    }
+    media = (float)soma / 5;
+    printf("A média dos números é: %.2f\n", media);
+    return 0;
+}   
+// 15. Faça um programa que leia um número e utilize uma função para verificar se ele é par.
+#include <stdio.h>
+#include <stdlib.h> 
+int ehPar(int numero) {
+    return numero % 2 == 0;
+}   
+
+// 16. Desenvolva um programa que utilize uma função para calcular o quadrado de um
+// número.
+#include <stdio.h>
+#include <stdlib.h> 
+int quadrado(int numero) {
+    return numero * numero;
+}
+// 17. Crie um programa que leia dois números e utilize uma função para retornar o maior.
+#include <stdio.h>
+#include <stdlib.h>
+int maior(int num1, int num2) {
+    return (num1 > num2) ? num1 : num2;
+}
+// 18. Faça um programa que leia um número inteiro e calcule a soma dos números pares até
+// ele.
+#include <stdio.h>
+#include <stdlib.h>
+int somaPares(int numero) {
+    int soma = 0;
+    for (int i = 2; i <= numero; i += 2) {
+        soma += i;
+    }
+    return soma;
+}   
+// 19. Escreva um programa que leia uma matriz 2x2 e mostre seus elementos.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int matriz[2][2];
+    printf("Digite os elementos da matriz 2x2:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    printf("Os elementos da matriz são:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}   
+// 20. Crie um programa que leia uma matriz 2x2 e calcule a soma de todos os valores.
+#include <stdio.h>
+#include <stdlib.h> 
+int main() {
+    int matriz[2][2];
+    int soma = 0;
+    printf("Digite os elementos da matriz 2x2:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+            soma += matriz[i][j];
+        }
+    }
+    printf("A soma de todos os valores da matriz é: %d\n", soma);
+    return 0;
+}   
+// Parte 2 – Estrutura de Dados Básica em C
+// 1. Declare um vetor de 5 inteiros e atribua valores manualmente.
+#include <stdio.h>
+#include <stdlib.h> 
+int main() {
+    int vetor[5] = {1, 2, 3, 4, 5};
+    return 0;
+}   
+// 2. Faça um programa que leia 5 números em um vetor e mostre-os na tela.
+#include <stdio.h>
+#include <stdlib.h> 
+int main() {
+    int vetor[5];
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+    printf("Os números digitados foram:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+    return 0;
+}   
+// 3. Desenvolva um programa que calcule a soma dos elementos de um vetor.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int vetor[5];
+    int soma = 0;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+        soma += vetor[i];
+    }
+    printf("A soma dos números é: %d\n", soma);
+    return 0;
+}   
+// 4. Crie um programa que encontre o maior valor em um vetor de 5 posições.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int vetor[5];
+    int maior;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+        if (i == 0 || vetor[i] > maior) {
+            maior = vetor[i];
+        }
+    }
+    printf("O maior número é: %d\n", maior);
+    return 0;
+}       
+// 5. Faça um programa que conte quantos números pares existem em um vetor.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int vetor[5];
+    int pares = 0;
+    printf("Digite 5 números inteiros:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &vetor[i]);
+        if (vetor[i] % 2 == 0) {
+            pares++;
+        }
+    }
+    printf("Existem %d números pares no vetor.\n", pares);
+    return 0;
+}   
+// 6. Declare uma matriz 3x3 e inicialize todos os valores com zero.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int matriz[3][3] = {0}; // Inicializa todos os valores com zero
+    return 0;
+}   
+// 7. Faça um programa que leia os valores de uma matriz 2x2.
+#include <stdio.h>
+#include <stdlib.h>     
+int main() {
+    int matriz[2][2];
+    printf("Digite os elementos da matriz 2x2:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+    return 0;
+}   
+// 8. Desenvolva um programa que calcule a soma dos elementos de uma matriz.
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int matriz[2][2];
+    int soma = 0;
+    printf("Digite os elementos da matriz 2x2:\n");
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+            soma += matriz[i][j];
+        }
+    }
+    printf("A soma de todos os valores da matriz é: %d\n", soma);
+    return 0;
+}   
+// 9. Crie um programa que utilize uma struct para armazenar nome e idade de uma pessoa.
+#include <stdio.h>      
+#include <stdlib.h>
+#include <string.h>
+struct Pessoa {
+    char nome[50];
+    int idade;
+};
+// 10. Faça um programa que leia os dados de uma struct e mostre na tela.
+#include <stdio.h>
+#include <stdlib.h> 
+#include <string.h>
+struct Pessoa {
+    char nome[50];
+    int idade;
+};
+int main() {
+    struct Pessoa pessoa;
+    printf("Digite o nome da pessoa: ");
+    fgets(pessoa.nome, sizeof(pessoa.nome), stdin); // Lê o nome com espaços
+    printf("Digite a idade da pessoa: ");
+    scanf("%d", &pessoa.idade);
+    printf("Nome: %s", pessoa.nome); // O fgets inclui a nova linha, por isso não é necessário adicionar \n
+    printf("Idade: %d\n", pessoa.idade);
+    return 0;
+}
+
+// Parte 3 – Estrutura de Dados (Questões Teóricas – Iniciais)
+
+// 1. O que é uma estrutura de dados?
+    // R: Uma estrutura de dados é uma forma de organizar e armazenar dados de maneira eficiente, permitindo operações como inserção, exclusão, busca e ordenação.
+    // Ela define a relação entre os dados e as operações que podem ser realizadas sobre eles, facilitando a manipulação e o acesso aos dados em um programa. 
+    //Exemplos comuns de estruturas de dados incluem arrays, listas ligadas, pilhas, filas, árvores e grafos.    
+
+
+    // 2. Qual a diferença entre variável simples e vetor?
+    // R: Uma variável simples é um espaço de memória que armazena um único valor, enquanto um vetor (ou array) é uma estrutura de dados que pode armazenar múltiplos valores do mesmo tipo
+    // em uma sequência contígua de memória. A variável simples é acessada diretamente pelo seu nome, enquanto os elementos de um vetor são acessados por meio de índices.
+    // Por exemplo, uma variável simples pode ser "int x = 5;", enquanto um vetor pode ser "int vetor[5] = {1, 2, 3, 4, 5};".
+
+    // 3. O que é um vetor na linguagem C?
+    // R: Um vetor na linguagem C é uma estrutura de dados que armazena uma coleção de elementos do mesmo tipo em uma sequência contígua de memória.
+    // Ele é declarado especificando o tipo dos elementos e o número de elementos que o vetor pode conter.
+    // Por exemplo, "int vetor[5];" declara um vetor de inteiros com capacidade para armazenar 5 valores.
+    // Os elementos do vetor são acessados usando índices, começando do zero, ou seja, o primeiro elemento é acessado por "vetor[0]", o segundo por "vetor[1]", e assim por diante.
+    // O vetor permite armazenar e manipular múltiplos valores relacionados de forma eficiente.
+
+    // 4. O que é uma matriz? Em que ela difere de um vetor?
+    // R: Uma matriz é uma estrutura de dados que armazena elementos em uma grade bidimensional (ou multidimensional), onde os dados são organizados em linhas e colunas. 
+    //Em contraste, um vetor é unidimensional, armazenando elementos em uma única sequência. A principal diferença entre uma matriz e um vetor é que a matriz pode representar dados em múltiplas dimensões, enquanto o vetor é limitado a uma dimensão.
+    // Por exemplo, "int matriz[2][3];" declara uma matriz de inteiros com 2 linhas e 3 colunas, enquanto "int vetor[5];" declara um vetor de inteiros com 5 elementos.
+
+    // 5. Para que serve uma struct na linguagem C?
+    // R: Uma struct (estrutura) na linguagem C é uma coleção de variáveis de diferentes tipos agrupadas sob um mesmo nome. Ela é usada para representar um objeto ou entidade que possui múltiplas características ou atributos. 
+    //A struct permite organizar dados relacionados de forma mais eficiente e facilita a manipulação desses dados em um programa. Por exemplo, uma struct pode ser usada para representar uma pessoa, contendo campos como nome, idade e altura, permitindo que todas essas informações sejam tratadas como um único objeto.
+
+    // 6. O que significa dizer que uma estrutura de dados é linear?
+    // R: Dizer que uma estrutura de dados é linear significa que os elementos dessa estrutura são organizados de forma sequencial, onde cada elemento tem um predecessor e um sucessor, exceto o primeiro e o último elemento.
+    // Em uma estrutura de dados linear, os elementos são acessados em uma ordem específica, geralmente do início ao fim. Exemplos de estruturas de dados lineares incluem arrays, listas ligadas, pilhas e filas. 
+    //Essas estruturas permitem operações como inserção, exclusão e busca de elementos de maneira eficiente, seguindo a sequência linear dos dados.
+
+    // 7. O que é alocação estática de memória?
+    // R: A alocação estática de memória é um tipo de gerenciamento de memória onde o espaço para variáveis e estruturas de dados é reservado em tempo de compilação. Isso significa que a quantidade de memória necessária para armazenar os dados é determinada antes do programa ser executado, e essa memória permanece alocada durante toda a execução do programa.
+    // Variáveis declaradas globalmente ou como estáticas dentro de funções são exemplos de alocação estática. A vantagem da alocação estática é que ela é simples e rápida, mas a desvantagem é que não permite flexibilidade, pois o tamanho das estruturas de dados deve ser conhecido e fixo em tempo de compilação.
+
+    // 8. Qual a importância das estruturas de dados na programação?
+    // R: As estruturas de dados são fundamentais na programação porque permitem organizar e manipular dados de maneira eficiente. Elas fornecem uma forma de armazenar e acessar dados de acordo com as necessidades do programa, facilitando a implementação de algoritmos e a resolução de problemas complexos.
+    // O uso adequado de estruturas de dados pode melhorar significativamente o desempenho do programa, reduzindo o tempo de execução e o consumo de memória. Além disso, as estruturas de dados são essenciais para a construção de software robusto e escalável, permitindo que os programadores criem soluções mais eficientes e eficazes para uma ampla variedade de problemas.
+
+    // 9. O que é um algoritmo e qual sua relação com estruturas de dados?
+    // R: Um algoritmo é um conjunto de instruções ou passos definidos para resolver um problema específico ou realizar uma tarefa. Ele é uma sequência finita de operações que levam a um resultado desejado. A relação entre algoritmos e estruturas de dados é estreita, pois os algoritmos dependem das estruturas de dados para armazenar e organizar os dados necessários para a execução do algoritmo.
+    // A escolha da estrutura de dados adequada pode influenciar diretamente a eficiência do algoritmo, afetando o tempo de execução e o uso de memória. Por exemplo, um algoritmo de busca pode ser mais eficiente se os dados estiverem organizados em uma estrutura de dados como uma árvore ou um hash table, em vez de um vetor desordenado.
+
+    // 10. Cite exemplos de estruturas de dados básicas utilizadas em C.
+    // R: Exemplos de estruturas de dados básicas utilizadas em C incluem:
+    // - Arrays (Vetores): Estruturas de dados que armazenam uma coleção de elementos do mesmo tipo em uma sequência contígua de memória.
+    // - Structs: Estruturas que agrupam variáveis de diferentes tipos sob um mesmo nome, permitindo representar objetos ou entidades com múltiplas características.
+    // - Listas Ligadas: Estruturas de dados onde cada elemento (nó) contém um valor e um ponteiro para o próximo elemento, permitindo inserções e exclusões dinâmicas.
+    // - Pilhas: Estruturas de dados que seguem a ordem LIFO (Last In, First Out), onde o último elemento inserido é o primeiro a ser removido.
+    // - Filas: Estruturas de dados que seguem a ordem FIFO (First In, First Out), onde o primeiro elemento inserido é o primeiro a ser removido.
+
